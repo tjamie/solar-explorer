@@ -6,6 +6,7 @@ import { selectAllCelestials } from "./celestialsSlice";
 import { selectCelestialByType } from "./celestialsSlice";
 
 
+
 const CelestialsSidebar = ({ setCelestialId }) => {
     const [celestialSelection, setCelestialSelection] = useState('all');
 

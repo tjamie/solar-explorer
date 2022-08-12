@@ -4,18 +4,25 @@ import { useSelector } from 'react-redux';
 import { ListGroup, ListGroupItem } from 'reactstrap';
 import CelestialListItem from './CelestialListItem';
 import { selectAllCelestials } from './celestialsSlice';
-
+import '../../styles.css';
 
 
 const CelestialsList = ({ setCelestialId, selector }) => {
-    // const celestials = useSelector(selectAllCelestials);
     const celestials = selector;
     return (
-        <ListGroup>
+        <ListGroup className='solar-button'>
             {celestials.map((celestial) => {
                 // console.log(`${celestial.id}`)
                 return (
-                    <ListGroupItem tag='button' action key={celestial.id} id={celestial.id} onClick={() => handleClick(celestial.id, setCelestialId)} >
+                    <ListGroupItem
+                        style={{
+                            color: '#c1bcb4',
+                            backgroundColor: '#26292a'
+                        }}
+                        tag='button'
+                        action key={celestial.id}
+                        id={celestial.id}
+                        onClick={() => handleClick(celestial.id, setCelestialId)} >
                         <CelestialListItem celestial={celestial} />
                     </ListGroupItem>
                 );
@@ -25,7 +32,6 @@ const CelestialsList = ({ setCelestialId, selector }) => {
 };
 
 const handleClick = (id, setCelestialId) => {
-    // console.log(id);
     setCelestialId(id);
 }
 
