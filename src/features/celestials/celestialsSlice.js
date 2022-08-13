@@ -21,10 +21,6 @@ export const selectCelestialById = (id) => (state) => {
     return state.celestials.celestialsArray.find((celestial) => celestial.id === parseInt(id));
 };
 
-// export const selectCelestialByType = (type) => (state) => {
-//     return state.celestials.celestialsArray.filter((celestial) => celestial.type === type);
-// }
-
 export const selectCelestialByType = (type) => (state) => {
     return (
         type == 'all'

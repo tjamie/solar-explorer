@@ -1,28 +1,42 @@
 import { useSelector } from 'react-redux';
-import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle } from 'reactstrap';
+import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Row, Col } from 'reactstrap';
 import { selectCelestialById } from '../celestials/celestialsSlice';
-
+import { convertScientificNotation } from '../../utils/convertScientificNotation';
+import { capitalize } from '../../utils/capitalize';
+import '../../styles.css';
 
 
 const DisplayCelestialDetails = ({ celestialId }) => {
     const celestial = useSelector(selectCelestialById(celestialId));
-    // const subtitle = () => {
-    //     return celestial.subtype ? celestial.subtype : celestial.type;
-    // }
+
+    const { distanceToParent: d } = celestial;
 
     return (
-        <Card>
-            <CardBody>
-                <CardTitle>{celestial.name}</CardTitle>
+        <Card className='solar-info'>
+            <CardBody className='solar-info'>
+                <CardTitle>{capitalize(celestial.name)}</CardTitle>
                 {celestial.subtype
-                    ? <CardSubtitle>{celestial.subtype}</CardSubtitle>
-                    : <CardSubtitle>{celestial.type}</CardSubtitle>
+                    ? <CardSubtitle>{capitalize(celestial.subtype)}</CardSubtitle>
+                    : <CardSubtitle>{capitalize(celestial.type)}</CardSubtitle>
                 }
-                <CardText>
-                    Mass: {celestial.mass} <br />
-                    Diameter: {celestial.diameter}<br />
-                    Gravity: {celestial.gravity} m/s<sup>2</sup>
-                </CardText>
+                <Row>
+                    <Col sm='6' className='my-auto'>
+                        <CardText>
+                            Distance to {capitalize(d.parent)}: {convertScientificNotation(d.val)} {d.unit}<br />
+                            Mass: {convertScientificNotation(celestial.mass)} kg<br />
+                            Diameter: {convertScientificNotation(celestial.diameter)} km <br />
+                            Gravity: {celestial.gravity} m/s<sup>2</sup><br />
+                            Surface Pressure: {convertScientificNotation(celestial.surfPressure)} kPa
+                        </CardText>
+                    </Col>
+                    <Col sm='6'>
+                        <CardText>
+                            <i>{celestial.description}</i>
+                        </CardText>
+                    </Col>
+                </Row>
+
+
             </CardBody>
         </Card>
     )

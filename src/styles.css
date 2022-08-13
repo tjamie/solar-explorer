@@ -1,0 +1,39 @@
+/* 
+dark1 button - #111313
+dark2 bg - #1a1c1d
+dark3 button - #26292a
+text - c1bcb4
+
+*/
+.solar-app {
+    text-align: center;
+}
+
+.solar-button {
+    color: #c1bcb4;
+    background-color: #26292a;
+}
+
+.solar-credits {
+    font-style: italic;
+}
+
+.solar-info {
+    color: #c1bcb4;
+    background-color: #1a1c1d;
+}
+
+.solar-nav {
+    color: #c1bcb4;
+    background-color: #111313;
+}
+
+.solar-footer {
+    margin-top: auto;
+}
+
+.solar-link {
+    color: #26292a;
+    text-decoration: none;
+    font-style: italic;
+}
