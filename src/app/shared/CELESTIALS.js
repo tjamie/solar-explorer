@@ -115,6 +115,29 @@ export const CELESTIALS = [
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non varius sapien. Proin lectus mauris, convallis ac faucibus eu, congue nec neque. Quisque gravida sapien nibh, eu ultricies risus hendrerit hendrerit. Cras convallis lacus id enim blandit mattis. Curabitur et lobortis lacus. Nam ut suscipit erat, et aliquet neque. Phasellus nibh tortor, molestie eget porttitor ac, bibendum vitae turpis. "
     },
     {
+        id: 11,
+        parentId: 3,
+        name: "moon",
+        image: "placeholder",
+        type: "moon",
+        subtype: "",
+        distanceToParent: {
+            unit: "km",
+            val: 384000,
+            parent: "earth"
+        },
+        mass: "7.35E22",
+        diameter: "3.47E3",
+        gravity: 1.62,
+        meanTemp: "placeholder (deg C)",
+        surfPressure: "3E-17",
+        rotPeriod: "placeholder (sidereal) (earth days)",
+        orbitPeriod: "placeholder (relative to parent)",
+        eccentricity: "placeholder",
+        modelId: 2366,
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non varius sapien. Proin lectus mauris, convallis ac faucibus eu, congue nec neque. Quisque gravida sapien nibh, eu ultricies risus hendrerit hendrerit. Cras convallis lacus id enim blandit mattis. Curabitur et lobortis lacus. Nam ut suscipit erat, et aliquet neque. Phasellus nibh tortor, molestie eget porttitor ac, bibendum vitae turpis. "
+    },
+    {
         id: 4,
         parentId: 0,
         name: "mars",
@@ -276,26 +299,26 @@ export const CELESTIALS = [
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non varius sapien. Proin lectus mauris, convallis ac faucibus eu, congue nec neque. Quisque gravida sapien nibh, eu ultricies risus hendrerit hendrerit. Cras convallis lacus id enim blandit mattis. Curabitur et lobortis lacus. Nam ut suscipit erat, et aliquet neque. Phasellus nibh tortor, molestie eget porttitor ac, bibendum vitae turpis. "
     },
     {
-        id: 11,
-        parentId: 3,
-        name: "moon",
+        id: 12,
+        parentId: 0,
+        name: "ceres",
         image: "placeholder",
-        type: "moon",
+        type: "dwarf planet",
         subtype: "",
         distanceToParent: {
-            unit: "km",
-            val: 384000,
-            parent: "earth"
+            unit: "au",
+            val: 2.8,
+            parent: "sun"
         },
-        mass: "7.35E22",
-        diameter: "3.47E3",
-        gravity: 1.62,
+        mass: "9.1E20",
+        diameter: "9.46E2",
+        gravity: 0.27,
         meanTemp: "placeholder (deg C)",
-        surfPressure: "3E-17",
+        surfPressure: "0.00E0",
         rotPeriod: "placeholder (sidereal) (earth days)",
         orbitPeriod: "placeholder (relative to parent)",
         eccentricity: "placeholder",
-        modelId: 2366,
+        modelId: 2400,
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non varius sapien. Proin lectus mauris, convallis ac faucibus eu, congue nec neque. Quisque gravida sapien nibh, eu ultricies risus hendrerit hendrerit. Cras convallis lacus id enim blandit mattis. Curabitur et lobortis lacus. Nam ut suscipit erat, et aliquet neque. Phasellus nibh tortor, molestie eget porttitor ac, bibendum vitae turpis. "
-    }
+    },
 ];

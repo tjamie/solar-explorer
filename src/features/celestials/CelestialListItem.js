@@ -1,10 +1,11 @@
+import { capitalize } from "../../utils/capitalize";
+
 const CelestialListItem = ({ celestial }) => {
-    // to appear in sidebar
     if (celestial) {
         const { name } = celestial;
         return (
             <>
-                {name}
+                {capitalize(name)}
             </>
         )
     }

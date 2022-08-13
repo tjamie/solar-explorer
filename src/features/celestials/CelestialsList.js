@@ -17,7 +17,8 @@ const CelestialsList = ({ setCelestialId, selector }) => {
                     <ListGroupItem
                         style={{ color: '#c1bcb4', backgroundColor: '#26292a' }}
                         tag='button'
-                        action key={celestial.id}
+                        action
+                        key={celestial.id}
                         id={celestial.id}
                         onClick={() => handleClick(celestial.id, setCelestialId)} >
                         <CelestialListItem celestial={celestial} />
