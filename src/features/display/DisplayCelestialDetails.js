@@ -17,19 +17,16 @@ const DisplayCelestialDetails = ({ celestialId }) => {
                 <CardTitle>{capitalize(celestial.name)}</CardTitle>
                 {celestial.subtype
                     ? <CardSubtitle>{capitalize(celestial.subtype)}</CardSubtitle>
-                    : <CardSubtitle>{celestial.type}</CardSubtitle>
+                    : <CardSubtitle>{capitalize(celestial.type)}</CardSubtitle>
                 }
                 <Row>
                     <Col sm='6' className='my-auto'>
                         <CardText>
-                            {/* Distance to {capitalize(d.parent)}: {convertScientificNotation(d.val)} {d.unit}<br /> */}
-                            Distance to {capitalize(d.parent)}: {d.val} {d.unit}<br />
-                            {/* Mass: {convertScientificNotation(celestial.mass)} kg<br /> */}
-                            Mass:{celestial.mass} kg <br />
-                            Diameter: {celestial.diameter}<br />
+                            Distance to {capitalize(d.parent)}: {convertScientificNotation(d.val)} {d.unit}<br />
+                            Mass: {convertScientificNotation(celestial.mass)} kg<br />
+                            Diameter: {convertScientificNotation(celestial.diameter)} km <br />
                             Gravity: {celestial.gravity} m/s<sup>2</sup><br />
-                            {/* Surface Pressure: {convertScientificNotation(celestial.surfPressure)} kPa */}
-                            Surface Pressure: {celestial.surfPressure} kPa
+                            Surface Pressure: {convertScientificNotation(celestial.surfPressure)} kPa
                         </CardText>
                     </Col>
                     <Col sm='6'>

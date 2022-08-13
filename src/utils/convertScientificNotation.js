@@ -1,9 +1,12 @@
 export const convertScientificNotation = (input) => {
-    const [magnitude, exponent] = input.split('E');
-    return (
-        <>
-            {magnitude} x 10<sup>{exponent}</sup>
-        </>
+    const arr = String(input).split('E');
 
-    )
+    if (arr.length > 1) {
+        return (
+            <>{arr[0]} x 10<sup>{arr[1]}</sup></>
+        );
+    }
+    return (
+        <>{arr[0]}</>
+    );
 }
