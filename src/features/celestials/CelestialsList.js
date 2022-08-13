@@ -15,10 +15,7 @@ const CelestialsList = ({ setCelestialId, selector }) => {
                 // console.log(`${celestial.id}`)
                 return (
                     <ListGroupItem
-                        style={{
-                            color: '#c1bcb4',
-                            backgroundColor: '#26292a'
-                        }}
+                        style={{ color: '#c1bcb4', backgroundColor: '#26292a' }}
                         tag='button'
                         action key={celestial.id}
                         id={celestial.id}

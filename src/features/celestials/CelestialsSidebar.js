@@ -16,19 +16,22 @@ const CelestialsSidebar = ({ setCelestialId }) => {
     }
 
     return (
-        <>
+        // <div height='100vh' style={{ borderColor: 'red', borderWidth: '1px', borderStyle: 'solid' }}>
+        <div>
             <p>current filter: {celestialSelection}</p>
-            <ButtonGroup>
+            <ButtonGroup className="d-flex" >
                 <Button color="secondary" id='all' onClick={handleClick}>A</Button>
                 <Button color="secondary" id='planet' onClick={handleClick}>P</Button>
                 <Button color="secondary" id='dwarf planet' onClick={handleClick}>DP</Button>
                 <Button color="secondary" id='moon' onClick={handleClick}>M</Button>
             </ButtonGroup>
-            <CelestialsList
-                setCelestialId={setCelestialId}
-                selector={useSelector(selectCelestialByType(celestialSelection))}
-            />
-        </>
+            <div className="flex-column h-100">
+                <CelestialsList
+                    setCelestialId={setCelestialId}
+                    selector={useSelector(selectCelestialByType(celestialSelection))}
+                />
+            </div>
+        </div>
     )
 
 

@@ -12,8 +12,8 @@ const DisplayCelestialModel = ({ celestialId }) => {
             <iframe
                 src={path}
                 width='100%'
-                height='100%'
-                frameborder='0'
+                height='600px'
+                frameBorder='0'
             />
             <p className='solar-credits'>Model Credit: NASA</p>
         </>

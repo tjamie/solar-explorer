@@ -1,6 +1,8 @@
 import { useSelector } from 'react-redux';
 import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Row, Col } from 'reactstrap';
 import { selectCelestialById } from '../celestials/celestialsSlice';
+import { convertScientificNotation } from '../../utils/convertScientificNotation';
+import { capitalize } from '../../utils/capitalize';
 import '../../styles.css';
 
 
@@ -12,18 +14,21 @@ const DisplayCelestialDetails = ({ celestialId }) => {
     return (
         <Card className='solar-info'>
             <CardBody className='solar-info'>
-                <CardTitle>{celestial.name}</CardTitle>
+                <CardTitle>{capitalize(celestial.name)}</CardTitle>
                 {celestial.subtype
-                    ? <CardSubtitle>{celestial.subtype}</CardSubtitle>
+                    ? <CardSubtitle>{capitalize(celestial.subtype)}</CardSubtitle>
                     : <CardSubtitle>{celestial.type}</CardSubtitle>
                 }
                 <Row>
                     <Col sm='6' className='my-auto'>
                         <CardText>
-                            Distance to {d.parent}: {d.val} {d.unit}<br />
-                            Mass: {celestial.mass} <br />
+                            {/* Distance to {capitalize(d.parent)}: {convertScientificNotation(d.val)} {d.unit}<br /> */}
+                            Distance to {capitalize(d.parent)}: {d.val} {d.unit}<br />
+                            {/* Mass: {convertScientificNotation(celestial.mass)} kg<br /> */}
+                            Mass:{celestial.mass} kg <br />
                             Diameter: {celestial.diameter}<br />
                             Gravity: {celestial.gravity} m/s<sup>2</sup><br />
+                            {/* Surface Pressure: {convertScientificNotation(celestial.surfPressure)} kPa */}
                             Surface Pressure: {celestial.surfPressure} kPa
                         </CardText>
                     </Col>
